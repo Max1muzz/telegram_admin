@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,11 +13,20 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+//        if (DB::table('sites')->count() == 0) {
+//            if ($sitesDumpFile = @file_get_contents(database_path('imports/sites.sql'))) {
+//                DB::unprepared($sitesDumpFile);
+//            }
+//        }
+        if (DB::table('stickers')->count() == 0) {
+            if ($stickersDumpFile = @file_get_contents(database_path('imports/stickers.sql'))) {
+                DB::unprepared($stickersDumpFile);
+            }
+        }
+//        if (DB::table('articles')->count() == 0) {
+//            if ($articlesDumpFile = @file_get_contents(database_path('imports/articles.sql'))) {
+//                DB::unprepared($articlesDumpFile);
+//            }
+//        }
     }
 }
