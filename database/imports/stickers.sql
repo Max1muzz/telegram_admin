@@ -33,5 +33,5 @@ INSERT INTO `stickers` (`id`, `file_id`, `emoji`, `set_name`) VALUES
 
 
 ALTER TABLE `stickers`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 COMMIT;
